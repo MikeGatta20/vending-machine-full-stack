@@ -1,6 +1,7 @@
 package com.techelevator.model;
 
 public class VendingItem {
+    private String location;
     private int itemId;
     private String name;
     private String type;
@@ -9,6 +10,7 @@ public class VendingItem {
     private String imageUrl;
 
     public VendingItem() {
+        location = "m2";
         itemId = -1;
         name = "Default Name";
         type = "Default Type";
@@ -17,12 +19,21 @@ public class VendingItem {
 
     }
 
-    public VendingItem(int itemId, String name, String type, int price, int inventory) {
+    public VendingItem(String location, int itemId, String name, String type, int price, int inventory) {
+        this.location = location;
         this.itemId = itemId;
         this.name = name;
         this.type = type;
         this.price = price;
         this.inventory = inventory;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public int getItemId() {

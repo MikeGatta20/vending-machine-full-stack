@@ -67,6 +67,7 @@ public class JdbcVendingItemDao implements VendingItemDAO {
 
     private VendingItem mapResultsToVendingItem(SqlRowSet results) {
         return new VendingItem(
+                results.getString("location"),
                 results.getInt("item_id"),
                 results.getString("name"),
                 results.getString("type"),
